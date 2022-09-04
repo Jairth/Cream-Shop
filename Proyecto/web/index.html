@@ -1,416 +1,270 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'layout.html' %}
+{% block content %}
+<main>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heladeria Dolce Placer</title>
-  <link rel="stylesheet" href="{% static './css/style.css' %}">
-  <script defer src="{% static './js/main.js' %}"></script>
-</head>
-
-<body>
-
-  <header class="nav">
+  <section class="front">
     <div class="container">
-      <div class="nav__wrapper">
-        <a href="./index.html" class="logo">
-          <img src="{% static './img/logo.svg' %}" alt="Logo">
-        </a>
-
-        <nav>
-          <div class="nav__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
+      <div class="front__wrapper">
+        <div class="front__left">
+          <div class="front__left-wrapper">
+            <h1>Disfruta nuestra variedad de sabores</h1>
+            <p>Nuestros helados están hechos con los mejores ingredientes, frescos y naturales. Disfrutelos junto a familiares y amigos.</p>
+            <div class="button__wrapper">
+              <a href="{% url 'carta' %}" class="btn">Explorar Carta</a>
+            </div>
           </div>
-          <ul class="nav__list">
-            <div class="nav__close">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            <div class="nav__list-wrapper">
-              <li><a class="nav__link" href="./index.html">Home</a></li>
-              <li><a class="nav__link" href="./carta.html' %">Carta</a></li>
-              <li><a class="nav__link" href="./nosotros.html">Nosotros</a></li>
-              <li><a class="nav__link" href="./contacto.html">Contacto</a></li>
-              <li>
-                <a class="btn" href="./pedidos.html">Pedidos</a>
-              </li>
-            </div>
-          </ul>
-        </nav>
+        </div>
+        <div class="front__right">
+          <div class="img-wrapper">
+            <img src="./img/portada.webp" alt="Helado-img" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-
-    <section class="front">
-      <div class="container">
-        <div class="front__wrapper">
-          <div class="front__left">
-            <div class="front__left-wrapper">
-              <h1>Disfruta nuestra variedad de sabores</h1>
-              <p>Nuestros helados están hechos con los mejores ingredientes, frescos y naturales. Disfrutelos junto a familiares y amigos.</p>
-              <div class="button__wrapper">
-                <a href="./carta.html" class="btn">Explorar Carta</a>
-              </div>
-            </div>
-          </div>
-          <div class="front__right">
-            <div class="img-wrapper">
-              <img src="{% static './img/portada.webp' %}" alt="Helado-img" loading="lazy">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="info">
-      <div class="container">
-        <div class="info__wrapper">
-          <div class="info__item">
-            <div class="info__item-icon">
-              <img src="{% static './img/truck.svg' %}" alt="Camión">
-            </div>
-            <h3>Envío gratis</h3>
-            <p>A todo el Perú</p>
-          </div>
-          <div class="info__item">
-            <div class="info__item-icon">
-              <img src="{% static './img/wall-clock-icon.svg' %}" alt="Horario">
-            </div>
-            <h3>Horario</h3>
-            <p>9AM - 7PM</p>
-          </div>
-          <div class="info__item">
-            <div class="info__item-icon">
-              <img src="{% static './img/address-icon.svg' %}" alt="Dirección">
-            </div>
-            <h3>Dirección</h3>
-            <p>Magdalena 7485</p>
-          </div>
-          <div class="info__item">
-            <div class="info__item-icon">
-              <img src="{% static './img/phone-icon.svg' %}" alt="Llamada">
-            </div>
-            <h3>¡Llama ya!</h3>
-            <p>164-2317</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="slider">
-      <div class="container">
-        <div class="slider__container">
-          <div class="slider__title">
-            <h2>Helados populares</h2>
-          </div>
-          <div class="slider__wrapper">
-              <img src="{% static './img/helado-chocolate.png' %}" alt="Helado">
-              <img src="{% static './img/helado-fresa.png' %}" alt="Helado">
-              <img src="{% static './img/helado-menta.png' %}" alt="Helado">
-              <img src="{% static './img/helado-mora2.png' %}" alt="Helado">
-              <img src="{% static './img/helado-vainilla.png' %}" alt="Helado">
-              <img src="{% static './img/helado-durazno2.png' %}" alt="Helado">
-              <img src="{% static './img/helado-arandano2.png' %}" alt="Helado">
-              <img src="{% static './img/helado-frambuesa.png' %}" alt="Helado">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="specials">
-      <div class="container">
-        <div class="specials__wrapper">
-          <div class="specials__left">
-
-            <div class="specials__item">
-              <div class="specials__item-img">
-                <img src="{% static './img/helado-vaso-chocolate.jpg' %}" alt="Helado-Especial">
-              </div>
-              <h2>Oreo Chocolatoso</h2>
-              <h3>S/18</h3>
-              <p>Disfrute de esta increible combinación de Oreo-menta, junto con el más cremoso helado de chocolate, bañado en fudge y crema dulce.</p>
-            </div>
-
-            <div class="specials__item specials__none">
-              <div class="specials__item-img">
-                <img src="{% static './img/helado-red-velvet.jpg' %}" alt="Helado-Especial">
-              </div>
-              <h2>Red-Velvet</h2>
-              <h3>S/10</h3>
-              <p>Una combinación de diferentes frutos rojos frecos, que podrá calmar cualquier antojo que tenga.</p>
-            </div>
-            
-            <div class="specials__item">
-              <div class="specials__item-img">
-                <img src="{% static './img/helado-vaso-vainilla.jpg' %}" alt="Helado-Especial">
-              </div>
-              <h2>Tri Sabor</h2>
-              <h3>S/15</h3>
-              <p>Chocolate, vainilla y fresa, una fantástica combinación y explosión de sabor que podrá degustar en nuestro local.</p>
-            </div>
-          </div>
-          <div class="special__right">
-            <h2>Especiales</h2>
-            <p>Encontrarás los mejores helados en <strong>Dolce Placer</strong>. Le garantizamos un producto de la más alta calidad y con los mejores ingredientes. </p>
-            <a class="btn" href="./pedidos.html">Pedidos</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="preparation">
-      <div class="container">
-        <div class="preparation__title">
-          <h2>Cómo lo hacemos</h2>
-        </div>
-        <div class="preparation__wrapper">
-
-          <div class="preparation__item">
-            <div class="preparation__icon">
-              <img src="{% static './img/milk.svg' %}" alt="Preparación">
-            </div>
-            <p>Para poder fabricar los mejores helados, se requiere de productos frescos y de la más alta calidad, por lo que usamos fruta del país como del extranjero.</p>
-          </div>
-
-          <div class="preparation__item">
-            <div class="preparation__icon">
-              <img src="{% static './img/balanza.svg' %}" alt="Preparación">
-            </div>
-            <p>Es necesario pesar cada ingrediente, para crear la mejor receta de helado, cremoso y balanceado.</p>
-          </div>
-
-          <div class="preparation__item">
-            <div class="preparation__icon">
-              <img src="{% static './img/batidora.svg' %}" alt="Preparación">
-            </div>
-            <p>Lo siguiente es mezclar los ingredientes, para obtener la mezcla perfecta de mucho sabor.</p>
-          </div>
-
-          <div class="preparation__item">
-            <div class="preparation__icon">
-              <img src="{% static './img/refrigeradora.svg' %}" alt="Preparación">
-            </div>
-            <p>Para acabar, la mezcla es llevada a nuestros refrigeradores especiales, quienes se encargan de terminar el proceso de congelamiento.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="images">
-      <div class="container">
-        <div class="images__wrapper">
-          <div class="images__img">
-            <img src="{% static './img/helado.png' %}" alt="Helado">
-          </div>
-          <div class="images__img">
-            <img src="{% static './img/helado-4.png' %}" alt="Helado">
-          </div>
-          <div class="images__img images__img-none">
-            <img src="{% static './img/helado-5.png' %}" alt="Helado">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="comments">
-      <div class="container">
-        <div class="comments__wrapper">
-          <h2>Comentarios de nuestros clientes</h2>
-          <div class="comments__items">
-
-            <div class="comments__item">
-              <div class="comments__item-info">
-                <h3>Aracely</h3>
-                <p>Gran atención por parte del personal, muy amables. Y los helados, lo mejor de lo mejor! Sin duda se los recomiendoa todos.</p>
-              </div>
-              <div class="comments__item-img">
-                <img src="{% static './img/cliente1.jpg' %}" alt="Cliente">
-              </div>
-            </div>
-
-            <div class="comments__item">
-              <div class="comments__item-info">
-                <h3>Marco</h3>
-                <p>Heladería 100% recomendado! Los helados en su punto y ni que decir del lugar, muy bonito y ambiente agradable. Muy recomendable.</p>
-              </div>
-              <div class="comments__item-img">
-                <img src="{% static './img/cliente2.jpg' %}" alt="Cliente">
-              </div>
-            </div>
-
-            <div class="comments__item">
-              <div class="comments__item-info">
-                <h3>Diego</h3>
-                <p>Un lugar muy acogedor y con gran variedad de sabores de helados, regresaré si o si! Muchas gracias por la atención.</p>
-              </div>
-              <div class="comments__item-img">
-                <img src="{% static './img/cliente3.jpg' %}" alt="Cliente">
-              </div>
-            </div>
-
-            <div class="comments__item">
-              <div class="comments__item-info">
-                <h3>Grace</h3>
-                <p>Ha sido una gran experiencia, desde la atención del personal, hasta la gran variedad de helados. Se lo recomendaré a mis amigos y familiares.</p>
-              </div>
-              <div class="comments__item-img">
-                <img src="{% static './img/cliente4.jpg' %}" alt="Cliente">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="discount">
-      <div class="container">
-        <div class="discount__wrapper">
-
-          <div class="discount__images">
-            <div class="discount__img1"><img src="{% static './img/helado-3.jpg' %}" alt="Helado" loading="lazy"></div>
-            <div class="discount__img2"><img src="{% static './img/helado-2.jpg' %}" alt="Helado" loading="lazy"></div>
-            <div class="discount__img3"><img src="{% static './img/helado-vaso.jpg' %}" alt="Helado" loading="lazy"></div>
-          </div>
-
-          <div class="discount__info">
-            <h3 class="discount__text">Descuento 25%</h3>
-            <h3 class="discount__title">¡Helados en descuento!</h3>
-            <h3 class="discount__price">
-              <span class="discount__old-price">S/15</span>
-              <span class="discount__new-price">S/8</span>
-            </h3>
-            <a class="btn form__activo" href="#">¡Pide ya!</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="news">
-      <div class="container">
-        <div class="news__wrapper">
-          <div class="news__info">
-            <h3>Noticas y Ofertas</h3>
-            <p>Suscríbete para recibir ofertas y noticas de Dolce Placer</p>
-          </div>
-          <div class="news__form">
-            <form>
-              <label for="email">
-                <input type="email" placeholder="Ingresa tu correo">
-              </label>
-              <button id="enviar" type="submit">Enviar</button>
-            </form>
-            <a id="mimail" href="mailto:rodriguez6191@hotmail.com"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <section class="info">
     <div class="container">
-      <div class="footer__wrapper">
-
-        <div class="footer__col1">
-          <div class="footer__logo">
-            <img src="{% static './img/logo2.svg' %}" alt="Jair's Kitchen" />
+      <div class="info__wrapper">
+        <div class="info__item">
+          <div class="info__item-icon">
+            <img src="./img/truck.svg" alt="Camión">
           </div>
-          <div class="footer__socials">
-            <h4 class="footer__socials-title">Síguenos</h4>
-            <ul>
-              <li>
-                <a href="">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
+          <h3>Envío gratis</h3>
+          <p>A todo el Perú</p>
+        </div>
+        <div class="info__item">
+          <div class="info__item-icon">
+            <img src="./img/wall-clock-icon.svg" alt="Horario">
+          </div>
+          <h3>Horario</h3>
+          <p>9AM - 7PM</p>
+        </div>
+        <div class="info__item">
+          <div class="info__item-icon">
+            <img src="./img/address-icon.svg" alt="Dirección">
+          </div>
+          <h3>Dirección</h3>
+          <p>Magdalena 7485</p>
+        </div>
+        <div class="info__item">
+          <div class="info__item-icon">
+            <img src="./img/phone-icon.svg" alt="Llamada">
+          </div>
+          <h3>¡Llama ya!</h3>
+          <p>164-2317</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slider">
+    <div class="container">
+      <div class="slider__container">
+        <div class="slider__title">
+          <h2>Helados populares</h2>
+        </div>
+        <div class="slider__wrapper">
+            <img src="./img/helado-chocolate.png" alt="Helado">
+            <img src="./img/helado-fresa.png" alt="Helado">
+            <img src="./img/helado-menta.png" alt="Helado">
+            <img src="./img/helado-mora2.png" alt="Helado">
+            <img src="./img/helado-vainilla.png" alt="Helado">
+            <img src="./img/helado-durazno2.png" alt="Helado">
+            <img src="./img/helado-arandano2.png" alt="Helado">
+            <img src="./img/helado-frambuesa.png" alt="Helado">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specials">
+    <div class="container">
+      <div class="specials__wrapper">
+        <div class="specials__left">
+
+          <div class="specials__item">
+            <div class="specials__item-img">
+              <img src="./img/helado-vaso-chocolate.jpg" alt="Helado-Especial">
+            </div>
+            <h2>Oreo Chocolatoso</h2>
+            <h3>S/18</h3>
+            <p>Disfrute de esta increible combinación de Oreo-menta, junto con el más cremoso helado de chocolate, bañado en fudge y crema dulce.</p>
+          </div>
+
+          <div class="specials__item specials__none">
+            <div class="specials__item-img">
+              <img src="./img/helado-red-velvet.jpg" alt="Helado-Especial">
+            </div>
+            <h2>Red-Velvet</h2>
+            <h3>S/10</h3>
+            <p>Una combinación de diferentes frutos rojos frecos, que podrá calmar cualquier antojo que tenga.</p>
+          </div>
+          
+          <div class="specials__item">
+            <div class="specials__item-img">
+              <img src="./img/helado-vaso-vainilla.jpg" alt="Helado-Especial">
+            </div>
+            <h2>Tri Sabor</h2>
+            <h3>S/15</h3>
+            <p>Chocolate, vainilla y fresa, una fantástica combinación y explosión de sabor que podrá degustar en nuestro local.</p>
           </div>
         </div>
+        <div class="special__right">
+          <h2>Especiales</h2>
+          <p>Encontrarás los mejores helados en <strong>Dolce Placer</strong>. Le garantizamos un producto de la más alta calidad y con los mejores ingredientes. </p>
+          <a class="btn" href="{% url 'pedidos' %}">Pedidos</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="footer__col2">
-          <h3 class="footer__text-title">General</h3>
-          <ul class="footer__text">
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./carta.html">Carta</a></li>
-            <li><a href="./pedidos.html">Pedidos</a></li>
-            <li><a href="./nosotros.html">Nosotros</a></li>
-            <li><a href="./contacto.html">Contáctanos</a></li>
-            <li><a href="#">Política de Privacidad</a></li>
-          </ul>
+  <section class="preparation">
+    <div class="container">
+      <div class="preparation__title">
+        <h2>Cómo lo hacemos</h2>
+      </div>
+      <div class="preparation__wrapper">
+
+        <div class="preparation__item">
+          <div class="preparation__icon">
+            <img src="./img/milk.svg" alt="Preparación">
+          </div>
+          <p>Para poder fabricar los mejores helados, se requiere de productos frescos y de la más alta calidad, por lo que usamos fruta del país como del extranjero.</p>
         </div>
 
-        <div class="footer__col3">
-          <h3 class="footer__text-title">Soporte</h3>
-          <ul class="footer__text">
-            <li><a href="./contacto.html">Contáctanos</a></li>
-            <li><a href="#">Centro de Apoyo</a></li>
-            <li><a href="#">Sugerencias</a></li>
-          </ul>
+        <div class="preparation__item">
+          <div class="preparation__icon">
+            <img src="./img/balanza.svg" alt="Preparación">
+          </div>
+          <p>Es necesario pesar cada ingrediente, para crear la mejor receta de helado, cremoso y balanceado.</p>
         </div>
 
-        <div class="footer__col4">
-          <h3 class="footer__text-title">Contacto</h3>
-          <ul class="footer__text">
-            <li>+51 9642895</li>
-            <li>contacto@dolceplacer.com</li>
-            <li>San Isidro, 4516, Batista</li>
-          </ul>
+        <div class="preparation__item">
+          <div class="preparation__icon">
+            <img src="./img/batidora.svg" alt="Preparación">
+          </div>
+          <p>Lo siguiente es mezclar los ingredientes, para obtener la mezcla perfecta de mucho sabor.</p>
+        </div>
+
+        <div class="preparation__item">
+          <div class="preparation__icon">
+            <img src="./img/refrigeradora.svg" alt="Preparación">
+          </div>
+          <p>Para acabar, la mezcla es llevada a nuestros refrigeradores especiales, quienes se encargan de terminar el proceso de congelamiento.</p>
         </div>
 
       </div>
     </div>
-  </footer>
+  </section>
 
-  <div class="copyright">
+  <section class="images">
     <div class="container">
-      <p class="copyright__text">© Copyright 2022 Dolce Placer | Todos los derechos reservados</p>
+      <div class="images__wrapper">
+        <div class="images__img">
+          <img src="./img/helado.png" alt="Helado">
+        </div>
+        <div class="images__img">
+          <img src="./img/helado-4.png" alt="Helado">
+        </div>
+        <div class="images__img images__img-none">
+          <img src="./img/helado-5.png" alt="Helado">
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+  </section>
 
-</html>
+  <section class="comments">
+    <div class="container">
+      <div class="comments__wrapper">
+        <h2>Comentarios de nuestros clientes</h2>
+        <div class="comments__items">
+
+          <div class="comments__item">
+            <div class="comments__item-info">
+              <h3>Aracely</h3>
+              <p>Gran atención por parte del personal, muy amables. Y los helados, lo mejor de lo mejor! Sin duda se los recomiendoa todos.</p>
+            </div>
+            <div class="comments__item-img">
+              <img src="./img/cliente1.jpg" alt="Cliente">
+            </div>
+          </div>
+
+          <div class="comments__item">
+            <div class="comments__item-info">
+              <h3>Marco</h3>
+              <p>Heladería 100% recomendado! Los helados en su punto y ni que decir del lugar, muy bonito y ambiente agradable. Muy recomendable.</p>
+            </div>
+            <div class="comments__item-img">
+              <img src="./img/cliente2.jpg" alt="Cliente">
+            </div>
+          </div>
+
+          <div class="comments__item">
+            <div class="comments__item-info">
+              <h3>Diego</h3>
+              <p>Un lugar muy acogedor y con gran variedad de sabores de helados, regresaré si o si! Muchas gracias por la atención.</p>
+            </div>
+            <div class="comments__item-img">
+              <img src="./img/cliente3.jpg" alt="Cliente">
+            </div>
+          </div>
+
+          <div class="comments__item">
+            <div class="comments__item-info">
+              <h3>Grace</h3>
+              <p>Ha sido una gran experiencia, desde la atención del personal, hasta la gran variedad de helados. Se lo recomendaré a mis amigos y familiares.</p>
+            </div>
+            <div class="comments__item-img">
+              <img src="./img/cliente4.jpg" alt="Cliente">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="discount">
+    <div class="container">
+      <div class="discount__wrapper">
+
+        <div class="discount__images">
+          <div class="discount__img1"><img src="./img/helado-3.jpg" alt="Helado" loading="lazy"></div>
+          <div class="discount__img2"><img src="./img/helado-2.jpg" alt="Helado" loading="lazy"></div>
+          <div class="discount__img3"><img src="./img/helado-vaso.jpg" alt="Helado" loading="lazy"></div>
+        </div>
+
+        <div class="discount__info">
+          <h3 class="discount__text">Descuento 25%</h3>
+          <h3 class="discount__title">¡Helados en descuento!</h3>
+          <h3 class="discount__price">
+            <span class="discount__old-price">S/15</span>
+            <span class="discount__new-price">S/8</span>
+          </h3>
+          <a class="btn form__activo" href="{% url 'pedidos' %}">¡Pide ya!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news">
+    <div class="container">
+      <div class="news__wrapper">
+        <div class="news__info">
+          <h3>Noticas y Ofertas</h3>
+          <p>Suscríbete para recibir ofertas y noticas de Dolce Placer</p>
+        </div>
+        <div class="news__form">
+          <form>
+            <label for="email">
+              <input type="email" placeholder="Ingresa tu correo">
+            </label>
+            <button id="enviar" type="submit">Enviar</button>
+          </form>
+          <a id="mimail" href="mailto:rodriguez6191@hotmail.com"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
