@@ -1,0 +1,129 @@
+.nav {
+  padding: 2rem 0;
+}
+
+.logo {
+  height: 60px;
+}
+
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__list-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav__icon, .nav__bg-overlay, .nav__close {
+  display: none;
+}
+
+.nav__list, .nav__link {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+
+  color: var(--color--text1);
+  padding: .5em ;
+}
+
+.nav__list li {
+  display: inline;
+  position: relative;
+  margin: 0 1em;
+}
+
+.nav__list li::before {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: 7px;
+  height: 2px;
+  width: 0;
+  background: var(--color--button);
+  transition: width .5s ease-in-out;
+}
+
+.nav__list li:hover::before {
+  width: 60%;
+}
+
+
+
+@media screen and (max-width: 840px) {
+  .nav {
+    position: relative;
+  }
+
+  .nav__icon {
+    display: block;
+    color: var(--color--text1);
+    cursor: pointer;
+    padding-top: .6em;
+  }
+
+  .nav__icon svg, .nav__close svg {
+    pointer-events: none;
+    height: 30px;
+    width: 30px;
+  }
+
+  .nav__close {
+    display: block;
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+
+    color: var(--color--text1);
+    cursor: pointer;
+  }
+
+  .nav__list-wrapper {
+    flex-direction: column;
+  }
+
+  .nav__list {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color--third);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 5;
+    clip-path: circle(0.3% at 100% 0);
+    transition: all .5s ease-out;
+  }
+
+  .nav__list.show {
+    clip-path: circle(141.2% at 100% 0);
+  }
+
+  .nav__list li {
+    display: block;
+    text-align: center;
+    margin-bottom: 3em;
+  }
+
+  .nav__list a {
+    font-size: 1.6rem;
+  }
+
+  .nav__list li::before {
+    display: none;
+  }
+
+}
+
+
+
+
+
